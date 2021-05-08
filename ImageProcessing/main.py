@@ -18,3 +18,4 @@ def image_processing(img,img_name,disease_type):
     #concat all three dictionaries with its image name and disease type
 
     return dict
+    #demo
