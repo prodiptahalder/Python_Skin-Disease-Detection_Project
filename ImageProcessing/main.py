@@ -17,5 +17,5 @@ def image_processing(img,img_name,disease_type):
     file_details={"DISEASE TYPE":disease_type, "FILE NAME":img_name} # details about the image being considered
     for d in (file_details,colorFeatureData,textureFeatureData,rgbHistogramFeatureData):
         all_features_data.update(d) # all the data required for Machine Learning fused in a single dictionary.
-
+    
     return all_features_data
