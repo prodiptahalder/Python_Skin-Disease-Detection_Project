@@ -2,6 +2,7 @@ import numpy as np
 import cv2 as cv
 
 def pre_process_image(img):
+    print("Pre-processing the image...") # User update and interaction
     # PRE-PROCESSING
     # transform it gray scale
     gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
