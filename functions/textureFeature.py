@@ -1,13 +1,12 @@
-import numpy as np
-import cv2 as cv
-import pandas as pd
-from scipy.stats import skew
 import mahotas as mt
-import matplotlib.pyplot as plt
 
 def get_image_texture_features(img):
+    print("Calculating Haralick's Texture features...") # User update and interaction
+
+    #we use mahotas predefined libray functions to calculate the haralick's features.
     textures = mt.features.haralick(img, compute_14th_feature=True)
-    mean = textures.mean(axis=0)
+    mean = textures.mean(axis=0) #calculates the mean value of all the haralick's features over different axes.
+
     dict = {'Angular second moment': mean[0],
             'contrast': mean[1],
             'correlation': mean[2],
@@ -23,9 +22,4 @@ def get_image_texture_features(img):
             'information measures of correlation 2': mean[12],
             'maximal correlation coefficient': mean[13]}
 
-    # df = pd.DataFrame(dict,index=[0])
-    # df.to_csv("textures_features_sample1.csv")
-
-    # print(dict)
     return dict
-    # dict is to be returned
